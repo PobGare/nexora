@@ -23,7 +23,7 @@ NEXORA is a responsive e-commerce product store with live search, category filte
 
 ## Live Website
 
-Live deployment coming soon.
+https://pobgare.github.io/nexora/
 
 ## Author
 
