@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NEXORA — an interactive product store concept built with vanilla JavaScript.">
+  <title>NEXORA — Objects for Everyday Motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="nav-shell">
+    <a class="logo" href="#top">NEXORA<span>®</span></a>
+    <div class="nav-center"><a href="#shop">Shop</a><a href="#manifesto">About</a><button id="searchTrigger">Search</button></div>
+    <button class="cart-trigger" id="cartTrigger">Bag <span id="cartBadge">0</span></button>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span>CURATED OBJECTS FOR EVERYDAY MOTION</span><i>✦</i>
+        <span>09 OBJECTS / ONE TIGHT EDIT</span><i>✦</i>
+        <span>LESS NOISE / BETTER CHOICES</span><i>✦</i>
+        <span>ELECTRONICS / WEAR / SHOES / ACCESSORIES</span><i>✦</i>
+      </div>
+      <div class="ticker-group" aria-hidden="true">
+        <span>CURATED OBJECTS FOR EVERYDAY MOTION</span><i>✦</i>
+        <span>09 OBJECTS / ONE TIGHT EDIT</span><i>✦</i>
+        <span>LESS NOISE / BETTER CHOICES</span><i>✦</i>
+        <span>ELECTRONICS / WEAR / SHOES / ACCESSORIES</span><i>✦</i>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Edition 01 · Utility / 2026</span>
+        <h1>Useful things,<br><em>better chosen.</em></h1>
+        <p>A tight edit of electronics, wearables and everyday objects. No endless catalogue. Just pieces worth keeping in reach.</p>
+        <a href="#shop" class="shop-link">Browse the edit <span>↓</span></a>
+      </div>
+      <div class="hero-object reveal" aria-hidden="true">
+        <div class="object-frame parallax" data-speed=".035"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=88" alt=""></div>
+        <span class="object-label">NXR / AUDIO / 01</span>
+        <span class="object-price">Rs. 5,000</span>
+      </div>
+      <div class="hero-index">01 — 09</div>
+    </section>
+
+    <section id="shop" class="shop section-pad">
+      <div class="shop-head reveal">
+        <div><span class="micro">01 / CATALOGUE</span><h2>Current edit</h2></div>
+        <p id="productCount">9 objects</p>
+      </div>
+
+      <div class="inline-search" id="inlineSearch" aria-hidden="true">
+        <label for="searchInput">Search catalogue</label>
+        <div class="inline-search-row">
+          <input id="searchInput" type="search" placeholder="Search product name..." autocomplete="off">
+          <button id="inlineSearchClear" type="button" aria-label="Clear search">×</button>
+        </div>
+        <span>Results update while you type.</span>
+      </div>
+
+      <div class="command-bar reveal">
+        <div class="filters" id="categoryFilters">
+          <button class="active" data-category="All">All</button>
+          <button data-category="Electronics">Electronics</button>
+          <button data-category="Clothing">Clothing</button>
+          <button data-category="Shoes">Shoes</button>
+          <button data-category="Accessories">Accessories</button>
+        </div>
+        <label class="sort-label">Sort
+          <select id="sortSelect"><option value="default">Featured</option><option value="low">Price ↑</option><option value="high">Price ↓</option><option value="az">Name A–Z</option></select>
+        </label>
+      </div>
+
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state" hidden><span>Nothing matched that search.</span><button id="clearSearch">Clear search</button></div>
+    </section>
+
+    <section id="manifesto" class="manifesto section-pad">
+      <div class="about-head reveal">
+        <span class="micro">02 / WHY NEXORA</span>
+        <span class="about-kicker">A smaller store by design.</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-statement reveal">
+          <h2>Less noise.<br><em>Better objects.</em></h2>
+          <p>NEXORA is built around a simple idea: shopping should feel focused, fast and considered. Instead of burying useful products inside an endless catalogue, every object gets room to be seen.</p>
+          <a href="#shop" class="about-link">Explore the catalogue <span>↗</span></a>
+        </div>
+
+        <div class="about-panel reveal">
+          <div class="about-panel-top">
+            <span>THE NEXORA EDIT</span>
+            <strong>01</strong>
+          </div>
+          <div class="about-feature"><span>01</span><div><h3>Curated, not crowded</h3><p>A compact collection keeps comparison simple and the interface quick.</p></div></div>
+          <div class="about-feature"><span>02</span><div><h3>Made to interact</h3><p>Search, filters, sorting, product details and a persistent bag work together without clutter.</p></div></div>
+          <div class="about-feature"><span>03</span><div><h3>Built around the object</h3><p>Large imagery, clear pricing and restrained typography keep attention on the products themselves.</p></div></div>
+        </div>
+      </div>
+
+      <div class="about-stats reveal">
+        <div><strong>09</strong><span>selected objects</span></div>
+        <div><strong>04</strong><span>product categories</span></div>
+        <div><strong>01</strong><span>focused catalogue</span></div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-head"><span>YOUR BAG</span><button id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total</span><strong id="cartTotal">Rs. 0</strong></div>
+      <button class="checkout-btn" id="checkoutBtn">Continue to checkout <span>↗</span></button>
+      <p>Demo checkout — no real payment is processed.</p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <div class="product-modal" id="productModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="Close details">×</button>
+    <div class="modal-photo"><img id="modalImage" src="" alt=""></div>
+    <div class="modal-copy"><span id="modalCategory" class="micro"></span><h2 id="modalName"></h2><p id="modalDescription"></p><div class="modal-bottom"><strong id="modalPrice"></strong><button id="modalAdd">Add to bag <span>＋</span></button></div></div>
+  </div>
+
+  <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+    <button class="modal-close" id="checkoutClose" aria-label="Close checkout">×</button>
+    <span class="micro">DEMO CHECKOUT</span>
+    <h2>Finish the order.</h2>
+    <form id="checkoutForm"><input required placeholder="Full name"><input required type="email" placeholder="Email"><input required placeholder="Delivery city"><button>Place demo order <span>↗</span></button></form>
+    <p id="checkoutNote">No real payment or order will be created.</p>
+  </div>
+
+  <footer class="footer section-pad"><a class="logo" href="#top">NEXORA<span>®</span></a><span>Interactive storefront concept / 2026</span><a href="#top">Top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
